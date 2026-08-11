@@ -338,6 +338,21 @@ header.nav.scrolled {
   color: var(--gold)
 }
 
+.hero h1 .full-name {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: clamp(.82rem, 1.5vw, 1.15rem);
+  font-weight: 500;
+  letter-spacing: .03em;
+  color: rgba(255, 255, 255, .68);
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.hero h1 .brk {
+  display: block
+}
+
 .hero p.lead {
   font-size: clamp(1.05rem, 1.5vw, 1.2rem);
   color: rgba(255, 255, 255, .82);
@@ -873,6 +888,121 @@ header.nav.scrolled {
   border-radius: 2px;
   padding: 9px 14px;
   background: rgba(212, 177, 90, .06)
+}
+
+/* Full course directory (home page) */
+.course-directory {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px
+}
+
+.cd-col h4 {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line)
+}
+
+.cd-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px
+}
+
+.cd-col li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-size: .95rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 10px;
+  transition: color .2s
+}
+
+.cd-col li a:hover {
+  color: var(--navy)
+}
+
+.cd-col li.cat6 a {
+  font-weight: 600;
+  color: var(--navy)
+}
+
+.cat6-badge {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .1em;
+  color: var(--navy-950);
+  background: var(--gold);
+  border-radius: 2px;
+  padding: 3px 7px;
+  flex-shrink: 0;
+  white-space: nowrap
+}
+
+/* Quick jump list of course names (courses page top) */
+.quicklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px
+}
+
+.quicklist a {
+  font-family: var(--mono);
+  font-size: .76rem;
+  letter-spacing: .04em;
+  color: var(--navy);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 9px 14px;
+  background: #fff;
+  text-decoration: none;
+  transition: border-color .2s, background .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px
+}
+
+.quicklist a:hover {
+  border-color: var(--gold-deep);
+  background: var(--mist)
+}
+
+.quicklist a.cat6 {
+  border-color: var(--gold);
+  background: rgba(212, 177, 90, .12);
+  color: var(--navy-950);
+  font-weight: 600
+}
+
+/* CAT-6 highlighted course card */
+.prog.cat6 {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, rgba(212, 177, 90, .08), #fff 45%)
+}
+
+.prog.cat6::before {
+  transform: scaleY(1)
+}
+
+.prog-cat6-badge {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .1em;
+  color: var(--navy-950);
+  background: var(--gold);
+  border-radius: 2px;
+  padding: 3px 8px
 }
 
 .corp-right {
@@ -1524,6 +1654,10 @@ footer {
     grid-template-columns: 1fr 1fr
   }
 
+  .course-directory {
+    grid-template-columns: 1fr 1fr
+  }
+
   .detail {
     grid-template-columns: 1fr;
     gap: 34px
@@ -1557,7 +1691,8 @@ footer {
   .grid4,
   .grid2,
   .grid3,
-  .vals {
+  .vals,
+  .course-directory {
     grid-template-columns: 1fr
   }
 
